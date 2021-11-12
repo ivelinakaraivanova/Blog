@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+from blog.blog_app.models import Post
+
 posts = [
     {
         'author': 'Author 1',
@@ -18,7 +20,7 @@ posts = [
 
 def home(request):
     context = {
-        'posts': posts
+        'posts': Post.objects.all()
     }
     return render(request, 'home.html', context)
 
