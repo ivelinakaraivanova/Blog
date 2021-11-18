@@ -23,7 +23,7 @@ from blog.accounts_app.views import register, profile
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('blog.blog_app.urls')),
+    path('post/', include('blog.blog_app.urls')),
     path('register/', register, name='register'),
     path('profile/', profile, name='profile'),
     path('login/', auth_views.LoginView.as_view(template_name='accounts/login.html'), name='login'),
